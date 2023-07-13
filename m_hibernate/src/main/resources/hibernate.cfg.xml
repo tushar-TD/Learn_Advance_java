@@ -23,9 +23,11 @@
  
         <!-- Mapping With Model Class Containing Annotations -->
         <!--  <mapping class="entities.Student" />--> 
-        <mapping class="entities.Emp" />
+        <!-- <mapping class="entities.Emp" />
         <mapping class="entities.SalariedEmp" />
-        <mapping class="entities.ContractEmp" /> 
+        <mapping class="entities.ContractEmp" /> -->
+        <mapping class="entities.Student"/>
+        <mapping class="entities.Address"/>
         
      
                 
