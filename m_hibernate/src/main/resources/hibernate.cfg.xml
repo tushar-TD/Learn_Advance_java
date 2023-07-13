@@ -31,9 +31,13 @@
         <mapping class="entities.Student"/>
         <mapping class="entities.Address"/>
          -->
-         
-         <mapping class="entities.Order"/>
+        
+        <!-- <mapping class="entities.Order"/>
         <mapping class="entities.Orderitem"/>
+         --> 
+         
+        <mapping class="entities.PermanentEmp"/>
+        <mapping class="entities.Temp_emp"/>
         
         
      

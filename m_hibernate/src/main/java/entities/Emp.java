@@ -14,6 +14,10 @@ public class Emp {
 	
 	@Id
 	int eid;
+	
+	@Column
+	String email;
+	
 	@Column
 	String name;
 	public Emp() {
