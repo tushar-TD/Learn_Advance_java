@@ -26,8 +26,15 @@
         <!-- <mapping class="entities.Emp" />
         <mapping class="entities.SalariedEmp" />
         <mapping class="entities.ContractEmp" /> -->
+        
+        <!-- 
         <mapping class="entities.Student"/>
         <mapping class="entities.Address"/>
+         -->
+         
+         <mapping class="entities.Order"/>
+        <mapping class="entities.Orderitem"/>
+        
         
      
                 
