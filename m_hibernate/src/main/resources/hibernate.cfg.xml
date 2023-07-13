@@ -10,7 +10,7 @@
  
         <!-- Database Connection Settings -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/objectmappings</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/h_mappings</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         
@@ -22,13 +22,12 @@
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
  
         <!-- Mapping With Model Class Containing Annotations -->
-        <!--  <mapping class="entities.Student" /> 
+        <!--  <mapping class="entities.Student" />--> 
         <mapping class="entities.Emp" />
         <mapping class="entities.SalariedEmp" />
-        <mapping class="entities.ContractEmp" /> -->
+        <mapping class="entities.ContractEmp" /> 
         
-        <mapping class="entities.Order"/>
-        <mapping class="entities.OrderItem"/>
+     
                 
         
     </session-factory>
