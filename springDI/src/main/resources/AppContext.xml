@@ -20,9 +20,10 @@
   		</property>
   	</bean>
   	
+  	
   	<bean id="nm" class="beans.Name" >
-  	<property name="fname" value="Virat"></property>
-  	<property name="lname" value="Kohli"></property>
+  	<property name="fname" value="Shruti"></property>
+  	<property name="lname" value="Sharma"></property>
   	</bean>
   	
   	<bean id="add" class="beans.Address">
