@@ -2,9 +2,12 @@ package beans;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Emp {
 
 	int empid;
+	
 	Name name;
 	float salary;
 	Address address;
@@ -54,6 +57,7 @@ public class Emp {
 		return address;
 	}
 
+	@Autowired
 	public void setAddress(Address address) {
 		this.address = address;
 	}

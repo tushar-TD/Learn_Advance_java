@@ -9,7 +9,7 @@ public class DIApp {
 
 	public static void main(String[] args) 
 	{
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("appContext.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("AppContext.xml");
 		Emp e = (Emp)ctx.getBean("emp");  //existing bean instance in the spring container
 		Emp e1 = (Emp)ctx.getBean("emp");
 		if(e == e1)
