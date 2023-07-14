@@ -36,8 +36,11 @@
         <mapping class="entities.Orderitem"/>
          --> 
          
-        <mapping class="entities.PermanentEmp"/>
-        <mapping class="entities.Temp_emp"/>
+        <!--<mapping class="entities.PermanentEmp"/>
+        <mapping class="entities.Temp_emp"/>  -->
+        
+        <mapping class="entities.Category"/>
+        <mapping class="entities.Product"/>
         
         
      
