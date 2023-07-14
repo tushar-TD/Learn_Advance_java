@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+  
+  	
+  	<bean id="emp" class="beans.Emp">
+  	<property name="empid" value="1001"></property>
+  	<property name="name" ref="nm"></property>
+  	<property name="salary" value="90000"></property>
+  	<property name="address" ref="add"></property>
+  	<property name="dept" ref="dept"></property>
+  	<property name="emails" >
+  			<list>
+  				<value>tushard@gmail.com</value>
+  				<value>tushard@object.com</value>
+  			</list>
+  		</property>
+  	</bean>
+  	
+  	<bean id="nm" class="beans.Name" >
+  	<property name="fname" value="Virat"></property>
+  	<property name="lname" value="Kohli"></property>
+  	</bean>
+  	
+  	<bean id="add" class="beans.Address">
+  	<property name="area" value="Punjab Colony"></property>
+  	<property name="city" value="Wardha"></property>
+  	<property name="pincode" value="442001"></property>
+  	</bean>
+  	
+  	<bean id="dept" class="beans.Dept">
+  	<property name="deptno" value="101"></property>
+  	<property name="dname" value="Finance"></property>
+  	<property name="location" value="NewYork"></property>
+  	</bean>
+</beans>
