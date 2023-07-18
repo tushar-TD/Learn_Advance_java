@@ -30,6 +30,10 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+		
 		String uid=request.getParameter("uid");
 		String pwd=request.getParameter("pwd");
 		PreparedStatement ps=null;

@@ -2,9 +2,12 @@ package dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import models.*;
+@Transactional
 public class EmpDAO {
 
 	@Autowired
@@ -15,9 +18,9 @@ public class EmpDAO {
 		return template.loadAll(Emp.class);
 	}
 	
-	public int save(Emp e)
+	public void save(Emp e)
 	{
-		return (int)template.save(e);
+	    template.save(e);
 	}
 	
 	public Emp getEmp(int empid)
