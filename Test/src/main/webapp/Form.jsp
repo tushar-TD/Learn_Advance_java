@@ -8,52 +8,22 @@
 </head>
 <body>
 
-<table action="http://localhost:8080/Test/calresult" method="post">
-    <tr>
-      <td>
-        <label id="nm">Enter the name:</label>
-        <input type="text">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label id="nm">Enter the Email:</label>
-        <input type="email">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label id="nm">Enter the contact:</label>
-        <input type="text">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label id="nm">Marks for sem1:</label>
-        <input type="text">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label id="nm">Marks for sem2:</label>
-        <input type="text">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label id="nm">Marks for sem3:</label>
-        <input type="text">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label id="nm">Marks for sem4:</label>
-        <input type="text">
-      </td>
-    </tr>
-  </table>
-  <input type="submit">
-
+<form action="calresult">
+Enter Name:
+<input type="text" name="sname"/>
+Enter Email:
+<input type="email" name="email"/>
+Enter Contact:
+<input type="text" name="contact"/>
+Enter Sem1 marks:
+<input type="text" name="sem1"/>
+Enter Sem2 marks:
+<input type="text" name="sem2"/>
+Enter Sem3 marks:
+<input type="text" name="sem3"/>
+Enter Sem4 marks:
+<input type="text" name="sem4"/>
+</form>
 
 </body>
 </html>

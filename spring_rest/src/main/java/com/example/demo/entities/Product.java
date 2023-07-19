@@ -10,17 +10,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name="product")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int pid;
+	private Integer pid;
 	
 	@Column
 	private String pname;
 	
+	@JsonIgnoreProperties("product")
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="cid")
 	Category category;
@@ -30,7 +33,7 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(int pid, String pname, Category category) {
+	public Product(Integer pid, String pname, Category category) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
@@ -41,7 +44,7 @@ public class Product {
 		return pid;
 	}
 
-	public void setPid(int pid) {
+	public void setPid(Integer pid) {
 		this.pid = pid;
 	}
 

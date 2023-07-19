@@ -1,12 +1,14 @@
-package Myservlets;
+package logic;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,64 +16,55 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entities.*;
 
-@WebServlet("/result")
+/**
+ * Servlet implementation class ShowTable
+ */
+@WebServlet("/showTable")
 public class result extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	Connection con;
-	public void init(ServletConfig config) throws ServletException {
-		con = (Connection)config.getServletContext().getAttribute("jdbccon");
-	}
 	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		con=(Connection)config.getServletContext().getAttribute("MyConnection");
+	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String contact=request.getParameter("contact");
-		String mname=request.getParameter("name");
-		String average=request.getParameter("average");
-		String grade=request.getParameter("grade");
-		
-		PreparedStatement ps=null;
-		try {
-			ps=con.prepareStatement("insert into users values(?,?,?,?,?,?,?)");
-			ps.setString(1, sid);
-			ps.setString(2, name);
-			ps.setString(3, email);
-			ps.setString(4, contact);
-			ps.setString(5, average);
-			ps.setString(6, email);
-			ps.setString(7, contact);
-			int n=ps.executeUpdate();
-			if(n!=0)
+		Statement st=null;
+		ResultSet rs=null;
+		List<Student>students=new ArrayList<>();
+		try
+		{
+			st=con.createStatement();
+			rs=st.executeQuery("select * from students");
+			while(rs.next())
 			{
-				out.print("<h1>Insertion In DataBase Success.</h1>");
+				Student s=new Student(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5),rs.getString(6));
+				students.add(s);
 			}
-			else
-			{
-				out.print("<h1>Insertion Failed.<.h1>");
-			}
+			getServletContext().setAttribute("students", students);
+			RequestDispatcher rd=request.getRequestDispatcher("showTable.jsp");
+			rd.forward(request, response);
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		finally
-		{
-			try
-			{
-				ps.close();
-				//st.close();
-			}
-			catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-		}
+		
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

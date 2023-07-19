@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core_1_1" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<h1>Welcome! This is the Test!</h1>
-	<a href="http://localhost:8080/Test/Form.jsp"> Fill out the Form: </a>
+   <table  border=1>
+   <c:forEach var="student" items="${students}">
+   <tr>
+   <td>${student.sid}</td>
+   <td>${student.sname}</td>
+   <td>${student.email}</td>
+   <td>${student.contact}</td>
+   <td>${student.average}</td>
+   <td>${student.grade}</td>
+   </tr>
+   </c:forEach>
+   </table>
+   
 </body>
 </html>
